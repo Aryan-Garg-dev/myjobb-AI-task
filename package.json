@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev -H 0.0.0.0 -p 3000 --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write",
-    "prepare": "husky"
+    "prepare": "husky",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\""
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
@@ -19,6 +19,7 @@
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
     "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {

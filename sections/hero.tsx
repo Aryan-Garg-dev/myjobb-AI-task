@@ -1,9 +1,7 @@
-import NeoButton from "@/components/buttons/neo-button";
-
 const HeroSection = () => {
   return (
     <section className={"section-container"}>
-      <div className={"section section-gradient"}>
+      <div className={"section bg-white"}>
         <h2 className={"text-center flex flex-wrap justify-center gap-1"}>
           <span>Polish your resume.</span>
           <span>Unlock bigger opportunities.</span>

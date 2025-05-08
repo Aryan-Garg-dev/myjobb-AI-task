@@ -22,4 +22,6 @@ const NeoButton = React.forwardRef<HTMLButtonElement, ButtonPropsType>(
   }
 );
 
+NeoButton.displayName = "NeoButton";
+
 export default NeoButton;

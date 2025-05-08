@@ -6,6 +6,7 @@ import cn from "@/utilities/tw-merge";
 import Image from "next/image";
 import { AlignJustifyIcon, XIcon } from "lucide-react";
 import useBreakpoint from "@/hooks/use-breakpoint";
+import { scrollToSection } from "@/utilities/scroll";
 
 const Navbar = () => {
   const { direction, scrolled } = useScrolled(40);
@@ -14,6 +15,16 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen((open) => !open);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
+  const mobileNavigate = (sectionId: string) => {
+    if (!isMenuOpen) return;
+    setIsMenuOpen(false);
+    scrollToSection(sectionId);
   };
 
   useEffect(() => {
@@ -47,8 +58,9 @@ const Navbar = () => {
             />
             <h1
               className={
-                "text-2xl max-lg:text-xl max-md:text-lg font-medium tracking-tight select-none"
+                "text-2xl max-lg:text-xl max-md:text-lg font-semibold tracking-tight select-none"
               }
+              onClick={scrollToTop}
             >
               Resume AI
             </h1>
@@ -58,8 +70,19 @@ const Navbar = () => {
           <div className={"flex flex-1 justify-center max-lg:hidden"}>
             <button className={"btn-dash"}>Features</button>
             <button className={"btn-dash"}>Pricing</button>
+            <button
+              className={"btn-dash"}
+              onClick={() => scrollToSection("faq")}
+            >
+              FAQ
+            </button>
             <button className={"btn-dash"}>About Us</button>
-            <button className={"btn-dash"}>Contact</button>
+            <button
+              className={"btn-dash"}
+              onClick={() => scrollToSection("footer")}
+            >
+              Contact
+            </button>
           </div>
 
           {/* Menu Button for small devices */}
@@ -96,8 +119,8 @@ const Navbar = () => {
       {(deviceType === "tablet" || deviceType === "mobile") && (
         <div
           className={cn(
-            "fixed top-0 z-10 h-[calc(100vh-65px)] mt-[65px] w-full border-t-neutral bg-base-200 transition-transform duration-400 flex justify-center",
-            !isMenuOpen ? "-translate-y-full" : "translate-y-0"
+            "fixed top-0 z-20 h-[calc(100vh-65px)] w-full border-t-neutral bg-base-200 transition-transform duration-400 flex justify-center",
+            !isMenuOpen ? "-translate-y-full" : "mt-[65px] translate-y-0"
           )}
         >
           <div
@@ -112,10 +135,19 @@ const Navbar = () => {
               <button className={"btn-outline py-4 border-dotted"}>
                 Pricing
               </button>
+              <button
+                className={"btn-outline py-4 border-dotted"}
+                onClick={() => mobileNavigate("faq")}
+              >
+                FAQ
+              </button>
               <button className={"btn-outline py-4 border-dotted"}>
                 About Us
               </button>
-              <button className={"btn-outline py-4 border-dotted"}>
+              <button
+                className={"btn-outline py-4 border-dotted"}
+                onClick={() => mobileNavigate("footer")}
+              >
                 Contact
               </button>
             </div>
@@ -135,4 +167,5 @@ const Navbar = () => {
     </>
   );
 };
+
 export default Navbar;
