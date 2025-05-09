@@ -68,7 +68,12 @@ const Navbar = () => {
           {/* Section Redirects */}
           <div className={"flex flex-1 justify-center max-lg:hidden"}>
             <button className={"btn-dash"}>Features</button>
-            <button className={"btn-dash"}>Pricing</button>
+            <button
+              className={"btn-dash"}
+              onClick={() => scrollToSection("pricing")}
+            >
+              Pricing
+            </button>
             <button
               className={"btn-dash"}
               onClick={() => scrollToSection("faq")}
@@ -131,7 +136,10 @@ const Navbar = () => {
               <button className={"btn-outline py-4 border-dotted"}>
                 Features
               </button>
-              <button className={"btn-outline py-4 border-dotted"}>
+              <button
+                className={"btn-outline py-4 border-dotted"}
+                onClick={() => mobileNavigate("pricing")}
+              >
                 Pricing
               </button>
               <button
