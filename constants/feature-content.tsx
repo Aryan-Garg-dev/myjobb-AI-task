@@ -1,24 +1,31 @@
 import { IFeatureCard } from "@/components/feature-card";
+import UploadResume from "@/components/ui/feature-cards/upload-resume";
+import PasteJobDescription from "@/components/ui/feature-cards/paste-job-description";
+import EditCustomizeResume from "@/components/ui/feature-cards/edit-customize-resume";
+type FeatureKey = "uploadResume" | "provideJobDescription" | "editAndCustomize";
 
-const featureContent: { [key: string]: IFeatureCard } = {
+export const featureContent: Record<FeatureKey, IFeatureCard> = {
   uploadResume: {
-    displayContent: <div>Display - Content</div>,
+    displayContent: <UploadResume />,
     title: "Upload Resume",
-    description: "Upload Resume Description",
+    description:
+      "Start by uploading your existing resume — PDF, DOCX, or even plain text. We’ll extract and structure your content in seconds.",
   },
   provideJobDescription: {
-    displayContent: <div>Provide Job Description</div>,
-    title: "Provide Job",
-    description: "Provide Job description",
+    displayContent: <PasteJobDescription />,
+    title: "Paste Job Description",
+    description:
+      "Paste the job description you're targeting. This helps us tailor your resume for maximum relevance and impact.",
   },
   editAndCustomize: {
-    displayContent: <div>Edit And Customize</div>,
+    displayContent: <EditCustomizeResume />,
     title: "Edit And Customize",
-    description: "Edit And Customise Description",
+    description:
+      "Use our intuitive editor to review, refine, and personalize the AI-generated resume. Choose different templates, tweak wording, and adjust formatting with ease.",
   },
 };
 
-export const featureSectionTitle = "Your Job-Ready Resume is 3 Steps Away";
+export const featureSectionTitle = "Your Job-Ready Resume is 3 Steps Away ✨";
 export const featureSectionDescription =
   "We make it ridiculously simple to go from resume to results.";
 

@@ -36,8 +36,10 @@ const PricingSection = () => {
           }
         >
           <PlusCorners className={"group-hover:text-accent"} />
-          <p className={"font-semibold text-center"}>{pricingFAQ.question}</p>
-          <p className={"text-center"}>{pricingFAQ.answer}</p>
+          <p className={"font-semibold text-center max-md:text-sm"}>
+            {pricingFAQ.question}
+          </p>
+          <p className={"text-center max-md:text-sm"}>{pricingFAQ.answer}</p>
         </div>
       </div>
     </section>

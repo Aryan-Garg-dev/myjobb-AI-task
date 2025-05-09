@@ -14,14 +14,15 @@ const FeatureCard: React.FC<IFeatureCard> = ({
 }) => {
   return (
     <div
-      className={"relative group border-neutral bg-base-100 w-sm flex flex-col"}
+      className={
+        "relative border-neutral bg-base-100 w-full flex-1 flex flex-col group/feature-card"
+      }
     >
-      <PlusCorners />
-      <div className={"pt-4 px-4 pb-2"}>{displayContent}</div>
-      <div className={"border-b-neutral"} />
-      <div className={"pt-2 px-4 pb-4 flex flex-col gap-2"}>
-        <h3>{title}</h3>
-        <p>{description}</p>
+      <PlusCorners className={"group-hover/feature-card:text-accent"} />
+      <div className={"border-b-neutral"}>{displayContent}</div>
+      <div className={"pt-2 px-4 pb-4 flex-1 flex flex-col"}>
+        <h3 className={"text-2xl max-md:text-lg font-semibold"}>{title}</h3>
+        <p className={"max-md:text-sm"}>{description}</p>
       </div>
     </div>
   );
