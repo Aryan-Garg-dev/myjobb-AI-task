@@ -12,7 +12,7 @@ const HeroSection = () => {
         </h2>
         <h1
           className={
-            "text-center font-label text-4xl max-md:text-2xl font-bold text-neutral-800"
+            "text-center font-label text-4xl max-md:text-3xl font-bold text-neutral-800"
           }
         >
           Tailor Your <span className={"text-blue-500"}>Resume</span> to Any Job
