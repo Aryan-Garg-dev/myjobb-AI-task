@@ -1,13 +1,11 @@
 import React from "react";
 import { IPricingPlan } from "@/constants/pricing-content";
-import PlusCorners from "@/components/plus-corners";
 import cn from "@/utilities/tw-merge";
 import { CheckCheckIcon, CheckIcon } from "lucide-react";
 import NeoButton from "@/components/buttons/neo-button";
 
 interface IPriceCard {
   pricingPlan: IPricingPlan;
-  children?: React.ReactNode;
 }
 
 const subscriptionDuration = (priceType: IPricingPlan["priceType"]) => {
@@ -34,7 +32,6 @@ const PriceCard: React.FC<IPriceCard> = ({
     description,
     plusFree,
   },
-  children,
 }) => {
   return (
     <div
@@ -113,7 +110,7 @@ const PriceCard: React.FC<IPriceCard> = ({
           </li>
         )}
         {features.map((feature) => (
-          <li className={"flex gap-2 items-center"}>
+          <li className={"flex gap-2 items-center"} key={feature}>
             <CheckIcon className={"size-3"} />
             <p>{feature}</p>
           </li>

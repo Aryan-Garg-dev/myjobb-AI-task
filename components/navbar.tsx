@@ -28,7 +28,6 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    if (!isMenuOpen) return;
     if (deviceType === "desktop") setIsMenuOpen(false);
   }, [deviceType]);
 
