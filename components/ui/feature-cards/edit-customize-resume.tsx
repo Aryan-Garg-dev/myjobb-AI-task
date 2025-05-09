@@ -7,7 +7,7 @@ import {
 
 const EditCustomizeResume = () => {
   return (
-    <div className="w-full h-40 p-3 border border-gray-200 bg-gray-50 shadow-sm flex flex-col gap-3 text-sm">
+    <div className="w-full h-40 p-3 bg-gray-50 shadow-sm flex flex-col gap-3 text-sm">
       <div className="flex items-center gap-2">
         <FileTextIcon className="text-blue-600" size={18} />
         <span className="font-medium text-gray-800">Your Resume</span>

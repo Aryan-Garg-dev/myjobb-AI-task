@@ -11,7 +11,7 @@ const UploadResume = () => {
   };
 
   return (
-    <div className={"w-full h-40 flex-center bg-base-200 p-4"}>
+    <div className={"w-full h-40 flex-center bg-gray-50 p-4"}>
       <input
         type={"file"}
         className={"hidden"}
