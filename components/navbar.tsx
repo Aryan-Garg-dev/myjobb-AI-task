@@ -99,7 +99,7 @@ const Navbar = () => {
             )}
           </button>
 
-          {/* Acrions */}
+          {/* Actions */}
           <div
             className={
               "border-[0.5px] border-neutral-100 flex flex-nowrap max-lg:hidden"
