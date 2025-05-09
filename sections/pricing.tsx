@@ -1,6 +1,11 @@
 import React from "react";
-import { pricingPlans } from "@/constants/pricing-content";
+import {
+  pricingFAQ,
+  pricingPlans,
+  pricingSlogan,
+} from "@/constants/pricing-content";
 import PriceCard from "@/components/price-card";
+import PlusCorners from "@/components/plus-corners";
 
 const PricingSection = () => {
   return (
@@ -14,9 +19,7 @@ const PricingSection = () => {
           >
             Pricing
           </h2>
-          <p className={"mb-3 text-center max-md:text-sm"}>
-            Tailor your resume like a pro, every time, for every job.
-          </p>
+          <p className={"mb-3 text-center max-md:text-sm"}>{pricingSlogan}</p>
         </div>
         <div
           className={
@@ -26,6 +29,15 @@ const PricingSection = () => {
           {pricingPlans.map((plan, index) => (
             <PriceCard pricingPlan={plan} key={index} />
           ))}
+        </div>
+        <div
+          className={
+            "relative group border-neutral bg-base-200 m-4 mt-8 p-2 px-4 flex-center flex-col"
+          }
+        >
+          <PlusCorners className={"group-hover:text-accent"} />
+          <p className={"font-semibold text-center"}>{pricingFAQ.question}</p>
+          <p className={"text-center"}>{pricingFAQ.answer}</p>
         </div>
       </div>
     </section>

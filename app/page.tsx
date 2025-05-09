@@ -3,6 +3,7 @@ import HeroSection from "@/sections/hero";
 import Footer from "@/sections/footer";
 import FaqSection from "@/sections/faq";
 import PricingSection from "@/sections/pricing";
+// import FeaturesSection from "@/sections/features";
 
 export default function Home() {
   return (
@@ -15,6 +16,8 @@ export default function Home() {
       >
         <HeroSection />
         <div className={"border-b-neutral"}></div>
+        {/*<FeaturesSection />*/}
+        {/*<div className={"border-b-neutral"}></div>*/}
         <PricingSection />
         <div className={"border-b-neutral"}></div>
         <FaqSection />
