@@ -36,8 +36,9 @@ const PriceCard: React.FC<IPriceCard> = ({
   return (
     <div
       className={cn(
-        "relative w-full min-w-sm max-w-md flex-1 border-neutral bg-base-200",
-        isPopular && "bg-accent border border-neutral-300 border-dotted"
+        "relative w-full lg:min-w-sm max-w-sm flex-1 border-neutral bg-base-200",
+        isPopular &&
+          "bg-accent border border-neutral-300 border-dotted scale-105 shadow-2xl shadow-neutral-400"
       )}
     >
       <div
@@ -48,7 +49,7 @@ const PriceCard: React.FC<IPriceCard> = ({
       >
         <div
           className={cn(
-            "font-label text-xl font-semibold text-accent",
+            "font-label text-xl max-sm:text-lg font-semibold text-accent",
             isPopular && "text-accent-content"
           )}
         >
@@ -56,7 +57,7 @@ const PriceCard: React.FC<IPriceCard> = ({
         </div>
         <p
           className={cn(
-            " text-accent/75",
+            " text-accent/75 max-sm:text-sm",
             isPopular && "text-accent-content/75"
           )}
         >
@@ -71,7 +72,7 @@ const PriceCard: React.FC<IPriceCard> = ({
       >
         <p
           className={cn(
-            "text-2xl font-label font-medium text-accent",
+            "text-2xl max-sm:text-xl font-label font-medium text-accent",
             isPopular && "text-accent-content"
           )}
         >
@@ -101,7 +102,7 @@ const PriceCard: React.FC<IPriceCard> = ({
             <CheckCheckIcon className={"size-3"} />
             <em
               className={cn(
-                " text-accent/80",
+                " text-accent/80 max-sm:text-xs",
                 isPopular && "text-accent-content/80"
               )}
             >
@@ -110,7 +111,10 @@ const PriceCard: React.FC<IPriceCard> = ({
           </li>
         )}
         {features.map((feature) => (
-          <li className={"flex gap-2 items-center"} key={feature}>
+          <li
+            className={"flex gap-2 items-center max-sm:text-xs"}
+            key={feature}
+          >
             <CheckIcon className={"size-3"} />
             <p>{feature}</p>
           </li>

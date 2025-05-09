@@ -5,7 +5,7 @@ import PriceCard from "@/components/price-card";
 const PricingSection = () => {
   return (
     <section className={"section-container"} id={"pricing"}>
-      <div className={"section bg-base-100 flex-center flex-col gap-4"}>
+      <div className={"section bg-base-100 flex-center flex-col gap-4 px-0"}>
         <div className={"w-full flex-center flex-col px-2"}>
           <h2
             className={
@@ -20,7 +20,7 @@ const PricingSection = () => {
         </div>
         <div
           className={
-            "w-full flex flex-wrap max-lg:flex-col lg:justify-center lg:items-start max-lg:items-center gap-5 px-5"
+            "w-full flex flex-wrap max-lg:flex-col lg:justify-center max-lg:items-center gap-5 px-5"
           }
         >
           {pricingPlans.map((plan, index) => (
